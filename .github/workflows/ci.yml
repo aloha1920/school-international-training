@@ -1,0 +1,21 @@
+name: Fizahana Docker
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  docker-build:
+    name: Fanamarinana ny Docker Build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Maka ny kaody avy amin'ny GitHub
+        uses: actions/checkout@v4
+
+      - name: Manamboatra ny Docker image
+        run: docker build -t school-international-training:test .
