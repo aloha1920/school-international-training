@@ -17,5 +17,12 @@ jobs:
       - name: Maka ny kaody avy amin'ny GitHub
         uses: actions/checkout@v4
 
+      - name: Manamarina ireo rakitra fototra
+        run: |
+          test -f index.html
+          test -f css/style.css
+          test -f js/script.js
+          echo "Tafita ny fanamarinana ireo rakitra fototra."
+
       - name: Manamboatra ny Docker image
         run: docker build -t school-international-training:test .
